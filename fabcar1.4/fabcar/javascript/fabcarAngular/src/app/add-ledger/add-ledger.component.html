@@ -1,0 +1,31 @@
+<div class="card mt-5" style="margin: auto;width: 600px;">
+  <div class="card-body">
+    <div class="card-title">Create New Car</div>
+    <div class="form-group">
+      <label for="carNo">Enter car number :</label>
+      <br>
+      <input type="text" class="form-control" placeholder="Ex:CAR0" [(ngModel)]="carDetails.carNo">
+      <br>
+      <label for="companyName">Enter Company Name :</label>
+      <br>
+      <input type="text" class="form-control" placeholder="Company Name" [(ngModel)]="carDetails.companyName">
+      <br>
+      <label for="modelName">Enter Model Name :</label>
+      <br>
+      <input type="text" class="form-control" placeholder="Model Name" [(ngModel)]="carDetails.modelName">
+      <br>
+      <label for="colour">Enter Colour :</label>
+      <br>
+      <input type="text" class="form-control" placeholder="Colour" [(ngModel)]="carDetails.colour">
+      <br>
+      <label for="ownerName">Enter owner name</label>
+      <br>
+      <input type="text" class="form-control" placeholder="OwnerName" [(ngModel)]="carDetails.ownerName">
+      <br>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-success" (click)="createCar(carDetails)">Create Car</button>
+    </div>
+  </div>
+  
+</div>

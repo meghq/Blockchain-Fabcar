@@ -1,0 +1,86 @@
+<div class="card mt-5" style="margin:auto;width: 600px;">
+  <div class="card-body">
+    <h5 class="card-title">Car Number</h5>
+    <div class="form-group">
+      <label for="carNo">Enter car number :</label>
+      <br>
+      <input type="text" class="form-control" id="carNo" placeholder="Ex:CAR0" [(ngModel)]="carNo" required>
+    </div>
+    <div>
+    <button type="submit" class="btn btn-primary" (click)="login(carNo)">Query Car</button>
+  </div>
+</div>
+<br>
+<table >
+  <thead>
+    <tr>
+    <th>Color</th>
+    <th>Type</th>
+    <th>Company</th>
+    <th>Model</th>
+    <th>Owner</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{car?.color}}</td>
+      <td>{{car?.docType}}</td>
+      <td>{{car?.make}}</td>
+      <td>{{car?.model}}</td>
+      <td>{{car?.owner}}</td>
+    </tr>
+  </tbody>
+</table>
+<div>
+<div class="card mt-5" style="margin:auto;width: 600px;">
+  <div class="card-body">
+    <h5 class="card-title">Query All Cars</h5>
+    <div>
+    <button type="submit" class="btn btn-primary" (click)="queryAllCar()">queryAllCar</button>
+  </div>
+</div>
+</div>
+<br>
+<table >
+  <thead>
+    <tr>
+    <th>Car Number</th>
+    <th>Color</th>
+    <th>Type</th>
+    <th>Company</th>
+    <th>Model</th>
+    <th>Owner</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let value of data_element">
+      <td>{{value?.Key}}</td>
+      <td>{{value?.Record.color}}</td>
+      <td>{{value?.Record.docType}}</td>
+      <td>{{value?.Record.make}}</td>
+      <td>{{value?.Record.model}}</td>
+      <td>{{value?.Record.owner}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="card mt-5" style="margin:auto;width: 600px;">
+    <div class="card-body">
+      <h5 class="card-title">Car Number</h5>
+      <div class="form-group">
+        <label for="carNo">Enter car number :</label>
+        <br>
+        <input type="text" class="form-control" id="Key" placeholder="Ex:CAR0" [(ngModel)]="cardata.Key" required>
+        <br>
+        <label for="carNo">Enter Correct Owner Name :</label>
+        <br>
+        <input type="text" class="form-control" id="owner" placeholder="Name" [(ngModel)]="cardata.owner" required>
+      </div>
+      <div>
+      <button type="submit" class="btn btn-primary" (click)="changeCarOwner(cardata)">Query Car</button>
+    </div>
+</div>
+</div>
+</div>
+<br>
+<button routerLink="addLedger" class= "btn btn-warning">AddLedger</button>
